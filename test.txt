@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trương Ngọc Dương | Bio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #0077b6;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: normal;
+      line-height: 1.5;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .section {
+      width: 100%;
+      max-width: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .glass-box {
+      padding: 12px 16px;
+      border-radius: 15px;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.3s ease;
+      height: 72px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glass-box:hover {
+      transform: scale(1.03);
+    }
+
+    .glass-content {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      align-items: center;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .glass-content img.icon {
+      width: 26px;
+      height: 26px;
+      justify-self: start;
+    }
+
+    .glass-content span {
+      justify-self: center;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .qr-container {
+      width: 100%;
+      max-width: 260px;
+      display: none;
+      justify-content: center;
+      padding-top: 10px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .qr-container img {
+      width: 90%;
+      max-width: 240px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .qr-container.show {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 18px;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="avatar.jpg" alt="Avatar" class="avatar" />
+  <h1>Xin chào mình là <strong>Trương Ngọc Dương</strong>,<br />Mình sinh ngày 01/06</h1>
+
+  <!-- Mạng xã hội -->
+  <div class="section">
+    <a class="glass-box" href="https://www.facebook.com/ngocduongiea" target="_blank">
+      <div class="glass-content">
+        <img src="facebook.png" alt="Facebook" class="icon" />
+        <span>Facebook</span>
+      </div>
+    </a>
+    <a class="glass-box" href="https://www.tiktok.com/@ngocduongea" target="_blank">
+      <div class="glass-content">
+        <img src="tiktok.png" alt="TikTok" class="icon" />
+        <span>TikTok</span>
+      </div>
+    </a>
+    <div class="glass-box">
+      <div class="glass-content">
+        <img src="discord.png" alt="Discord" class="icon" />
+        <span>Discord: <strong>ngocduongg</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ngân hàng & Momo -->
+  <div class="section">
+    <div onclick="toggleQR('qr-mb')" class="glass-box">
+      <div class="glass-content">
+        <img src="mbbank.png" alt="MBBank" class="icon" />
+        <span>MBBank<br><strong>44668899909999</strong></span>
+      </div>
+    </div>
+    <div id="qr-mb" class="qr-container">
+      <img src="mbbank.jpg" alt="QR MBBank" />
+    </div>
+
+    <div onclick="toggleQR('qr-acb')" class="glass-box">
+      <div class="glass-content">
+        <img src="acb.png" alt="ACB" class="icon" />
+        <span>ACB<br><strong>20057611</strong></span>
+      </div>
+    </div>
+    <div id="qr-acb" class="qr-container">
+      <img src="acb.jpg" alt="QR ACB" />
+    </div>
+
+    <div onclick="toggleQR('qr-tech')" class="glass-box">
+      <div class="glass-content">
+        <img src="techcombank.png" alt="Techcombank" class="icon" />
+        <span>Techcombank<br><strong>44668899909999</strong></span>
+      </div>
+    </div>
+    <div id="qr-tech" class="qr-container">
+      <img src="techcombank.jpg" alt="QR Techcombank" />
+    </div>
+
+    <div onclick="toggleQR('qr-momo')" class="glass-box">
+      <div class="glass-content">
+        <img src="momo.png" alt="Momo" class="icon" />
+        <span>Momo<br><strong>0395882961</strong></span>
+      </div>
+    </div>
+    <div id="qr-momo" class="qr-container">
+      <img src="momo.jpg" alt="QR Momo" />
+    </div>
+  </div>
+
+  <script>
+    function toggleQR(id) {
+      document.querySelectorAll('.qr-container').forEach(el => {
+        if (el.id === id) {
+          el.classList.toggle('show');
+        } else {
+          el.classList.remove('show');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
